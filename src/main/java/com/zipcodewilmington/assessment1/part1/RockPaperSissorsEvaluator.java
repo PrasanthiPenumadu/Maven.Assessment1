@@ -13,7 +13,14 @@ public class RockPaperSissorsEvaluator {
      * @return the respective winning move
      */
     public String getWinningMove(String handSign) {
-        return null;
+        if(handSign.equalsIgnoreCase("rock"))
+            return "paper";
+        else if(handSign.equalsIgnoreCase("paper"))
+        return "scissor";
+        else if(handSign.equalsIgnoreCase("scissor"))
+            return "rock";
+        else
+            return "";
     }
 
     /**
@@ -21,7 +28,14 @@ public class RockPaperSissorsEvaluator {
      * @return the respective losing move
      */
     public String getLosingMove(String handSign) {
-        return null;
+        if(handSign.equalsIgnoreCase("rock"))
+            return "scissor";
+        else if(handSign.equalsIgnoreCase("paper"))
+            return "rock";
+        else if(handSign.equalsIgnoreCase("scissor"))
+            return "paper";
+        else
+            return "";
     }
 
     /**
@@ -30,6 +44,20 @@ public class RockPaperSissorsEvaluator {
      * @return a string representative of the winning hand sign between the two players
      */
     public String getWinner(String handSignOfPlayer1, String handSignOfPlayer2) {
-        return null;
+        if(handSignOfPlayer1.equalsIgnoreCase("rock")&&handSignOfPlayer2.equalsIgnoreCase("paper"))
+            return handSignOfPlayer2;
+        else if(handSignOfPlayer1.equalsIgnoreCase("paper")&&handSignOfPlayer2.equalsIgnoreCase("scissor"))
+            return handSignOfPlayer2;
+        else if(handSignOfPlayer1.equalsIgnoreCase("scissor")&&handSignOfPlayer2.equalsIgnoreCase("rock"))
+            return handSignOfPlayer2;
+        else if(handSignOfPlayer1.equalsIgnoreCase("scissor")&&handSignOfPlayer2.equalsIgnoreCase("paper"))
+            return handSignOfPlayer1;
+        else if(handSignOfPlayer1.equalsIgnoreCase("rock")&&handSignOfPlayer2.equalsIgnoreCase("scissor"))
+            return handSignOfPlayer1;
+        else if(handSignOfPlayer1.equalsIgnoreCase("paper")&&handSignOfPlayer2.equalsIgnoreCase("rock"))
+        return handSignOfPlayer2;
+        else
+            return "";
+
     }
 }
