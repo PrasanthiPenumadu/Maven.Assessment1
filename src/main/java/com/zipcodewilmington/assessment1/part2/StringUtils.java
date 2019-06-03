@@ -11,7 +11,8 @@ public class StringUtils {
      * given a string containing words delimited by spaces, representative of a sentence, return an array of strings, each element representative of a respective word in the sentence
      */
     public static String[] getWords(String sentence) {
-        return null;
+        String[] words=sentence.split(" ");
+        return words;
     }
 
 
@@ -21,7 +22,8 @@ public class StringUtils {
      * given a string containing words delimited by spaces, representative of a sentence, return the first word of the sentence
      */
     public static String getFirstWord(String sentence) {
-        return null;
+        String[] words=sentence.split(" ");
+        return words[0];
     }
 
     /**
@@ -30,7 +32,13 @@ public class StringUtils {
      * given a string containing words delimited by spaces, representative of a sentence, return the first word with identical contents in reverse order
      */
     public static String reverseFirstWord(String sentence) {
-        return null;
+        String[] words=sentence.split(" ");
+        String revWord=words[0];
+        String revRes="";
+        char[] wordStr=revWord.toCharArray();
+        for(int i=wordStr.length-1;i>=0;i--){
+            revRes=revRes+wordStr[i];}
+        return revRes;
     }
 
     /**
@@ -39,7 +47,14 @@ public class StringUtils {
      * given a string containing words delimited by spaces, representative of a sentence, return the first word with identical contents in reverse order with the first character capitalized
      */
     public static String reverseFirstWordThenCamelCase(String sentence) {
-        return null;
+        String[] words=sentence.split(" ");
+        String revWord=words[0];
+        String revRes="";
+        char[] wordStr=revWord.toCharArray();
+        for(int i=wordStr.length-1;i>=0;i--){
+            revRes=revRes+wordStr[i];}
+        String result=revRes.substring(0,1).toUpperCase()+revRes.substring(1);
+        return result;
     }
 
 
@@ -50,7 +65,8 @@ public class StringUtils {
      * given a string and index, return an identical string excluding the character at the specified index
      */
     public static String removeCharacterAtIndex(String str, int index) {
-        return null;
+        String s2=str.substring(0,index)+str.substring(index+1);
+        return s2;
     }
 
 }
