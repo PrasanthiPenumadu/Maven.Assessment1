@@ -6,7 +6,7 @@ public class Jumper {
      * Complete the function below.
      */
     public int jumps(int k, int j) {
-        int krem=k;
+       /* int krem=k;
         int count=0;
         if(j<=k){
         for(int i=0;i<k;i=i+j){
@@ -21,6 +21,7 @@ public class Jumper {
                     count++;
         }
 
-        return count;
+        return count;*/
+       return k/j+k%j;
     }
 }

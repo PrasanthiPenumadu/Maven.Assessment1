@@ -17,10 +17,13 @@ public class PetOwner {
 
     public PetOwner(String name, Pet... pets) {
         this.name=name;
-        if (pets != null)
-        pets1 = new ArrayList<>(Arrays.asList(pets));
+     //   pets1 = new ArrayList<Pet>(Arrays.asList(pets));
+        if (pets != null){
+       pets1 = new ArrayList<>(Arrays.asList(pets));
+       for(int i=0;i<pets1.size();i++)
+        pets1.get(i).setOwner(this);}
        else pets1 = new ArrayList<>();
-
+// pets1 = new ArrayList<>(Arrays.asList(pets));
     }
 //PetOwner po=new PetOwner(name,pets1);
     /**
@@ -31,9 +34,6 @@ public class PetOwner {
     }
 
     private static void add(Pet pet) {
-
-
-
         pets1.add(pet);
     }
 
@@ -58,7 +58,11 @@ else {pets1 = new ArrayList<>();pets1.add(null);}
      * @return the age of the Pet object whose age field is the lowest amongst all Pets in this class
      */
     public Integer getYoungetPetAge() {
-        return null;
+        Integer min=5;
+        for(int i=0;i< pets1.size();i++){
+            if(pets1.get(i).getAge()<min)
+                min=pets1.get(i).getAge();}
+        return min;
     }
 
 
@@ -68,7 +72,11 @@ else {pets1 = new ArrayList<>();pets1.add(null);}
      * @return the age of the Pet object whose age field is the highest amongst all Pets in this class
      */
     public Integer getOldestPetAge() {
-        return null;
+        Integer max=0;
+        for(int i=0;i< pets1.size();i++){
+            if(pets1.get(i).getAge()>max)
+                max=pets1.get(i).getAge();}
+        return max;
     }
 
 
@@ -76,7 +84,14 @@ else {pets1 = new ArrayList<>();pets1.add(null);}
      * @return the sum of ages of Pet objects stored in this class divided by the number of Pet object
      */
     public Float getAveragePetAge() {
-        return null;
+        Integer sum = 0;
+        Float average = Float.valueOf(0);
+        for (int i = 0; i < pets1.size(); i++) {
+            sum = sum + pets1.get(i).getAge();
+            average = Float.valueOf(sum / pets1.size());
+
+        }
+        return average;
     }
 
     /**
